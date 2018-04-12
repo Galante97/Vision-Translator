@@ -10,13 +10,56 @@ import AVFoundation
 import UIKit
 import Vision
 
+
+class Draw: UIView {
+
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    var testvar = 0;
+    
+    override func draw(_ rect: CGRect) {
+        let h = rect.height
+        let w = rect.width
+        let color:UIColor = UIColor.yellow
+        
+        let drect = CGRect(x: (w * 0.25),y: (h * 0.25),width: (w * 0.5),height: (h * 0.5))
+        let bpath:UIBezierPath = UIBezierPath(rect: drect)
+        
+        color.set()
+        bpath.stroke()
+        
+        print("it ran")
+        
+        NSLog("drawRect has updated the view")
+        
+    }
+    
+}
+
+
 class ViewController: UIViewController {
 
-override func viewDidLoad() {
+    @IBOutlet weak var cameraView: UIView!
+    
+    override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    
+  /*  let k = Draw(frame: CGRect(
+        origin: CGPoint(x: 50, y: 50),
+        size: CGSize(width: 100, height: 100)))
+    self.preview.addSubview(k)*/
+    
+    //tesseract OCR
     tesseract?.pageSegmentationMode = .sparseText
     tesseract?.charWhitelist = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890()-+*!/?.,@#$%&"
+    
     if isAuthorized() {
         configureTextDetection()
         configureCamera()
@@ -28,6 +71,10 @@ override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
 }
+    
+    
+// MARK: - Text Requests and setup
+    
 private func configureTextDetection() {
     textDetectionRequest = VNDetectTextRectanglesRequest(completionHandler: handleDetection)
     textDetectionRequest!.reportCharacterBoxes = true
@@ -107,7 +154,7 @@ private func handleDetection(request: VNRequest, error: Error?) {
     }
 }
 private var preview: PreviewView {
-    return view as! PreviewView
+    return cameraView as! PreviewView
 }
 private func isAuthorized() -> Bool {
     let authorizationStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
@@ -204,6 +251,8 @@ func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBu
                 layer.removeFromSuperlayer()
             }
         }
+        
+        //WHERE TEXT IS MADE INTO A STRING
         for tuple in recognizedTextPositionTuples {
             let textLayer = CATextLayer()
             textLayer.backgroundColor = UIColor.clear.cgColor
@@ -216,7 +265,7 @@ func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBu
 
             textLayer.frame = rect
             textLayer.string = tuple.text
-            textLayer.foregroundColor = UIColor.green.cgColor
+            textLayer.foregroundColor = UIColor.blue.cgColor
             self.view.layer.addSublayer(textLayer)
         }
     }

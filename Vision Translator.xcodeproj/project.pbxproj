@@ -17,6 +17,7 @@
 		20A7BF891F3AE91200854C42 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A7BF881F3AE91200854C42 /* Preview.swift */; };
 		20A7BF911F3B257100854C42 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A7BF8C1F3B250A00854C42 /* TesseractOCR.framework */; };
 		64E9ADE81F2A2436007BAC6F /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 64E9ADE71F2A2436007BAC6F /* tessdata */; };
+		A125A5B5207FC02200906B24 /* drawRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A125A5B4207FC02200906B24 /* drawRect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		20A7BF921F3B259100854C42 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		20A7BF931F3B259800854C42 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		64E9ADE71F2A2436007BAC6F /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		A125A5B4207FC02200906B24 /* drawRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawRect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				64E9ADE71F2A2436007BAC6F /* tessdata */,
 				202486501F3AE20500CD12E6 /* AppDelegate.swift */,
 				202486521F3AE20500CD12E6 /* ViewController.swift */,
+				A125A5B4207FC02200906B24 /* drawRect.swift */,
 				202486541F3AE20500CD12E6 /* Main.storyboard */,
 				202486571F3AE20500CD12E6 /* Assets.xcassets */,
 				202486591F3AE20500CD12E6 /* LaunchScreen.storyboard */,
@@ -167,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				202486531F3AE20500CD12E6 /* ViewController.swift in Sources */,
+				A125A5B5207FC02200906B24 /* drawRect.swift in Sources */,
 				20A7BF891F3AE91200854C42 /* Preview.swift in Sources */,
 				202486511F3AE20500CD12E6 /* AppDelegate.swift in Sources */,
 			);
