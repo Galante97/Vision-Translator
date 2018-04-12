@@ -10,45 +10,14 @@ import AVFoundation
 import UIKit
 import Vision
 
-
-class Draw: UIView {
-
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    var testvar = 0;
-    
-    override func draw(_ rect: CGRect) {
-        let h = rect.height
-        let w = rect.width
-        let color:UIColor = UIColor.yellow
-        
-        let drect = CGRect(x: (w * 0.25),y: (h * 0.25),width: (w * 0.5),height: (h * 0.5))
-        let bpath:UIBezierPath = UIBezierPath(rect: drect)
-        
-        color.set()
-        bpath.stroke()
-        
-        print("it ran")
-        
-        NSLog("drawRect has updated the view")
-        
-    }
-    
-}
-
-
 class ViewController: UIViewController {
 
     @IBOutlet weak var cameraView: UIView!
     
-    override func viewDidLoad() {
+    
+
+
+override func viewDidLoad() {
     super.viewDidLoad()
     
   /*  let k = Draw(frame: CGRect(
@@ -124,7 +93,7 @@ private func handleDetection(request: VNRequest, error: Error?) {
     textObservations = textResults as! [VNTextObservation]
     DispatchQueue.main.async {
         
-        guard let sublayers = self.view.layer.sublayers else {
+        guard let sublayers = self.cameraView.layer.sublayers else {
             return
         }
         for layer in sublayers[1...] {
@@ -132,8 +101,8 @@ private func handleDetection(request: VNRequest, error: Error?) {
                 layer.removeFromSuperlayer()
             }
         }
-        let viewWidth = self.view.frame.size.width
-        let viewHeight = self.view.frame.size.height
+        let viewWidth = self.cameraView.frame.size.width
+        let viewHeight = self.cameraView.frame.size.height
         for result in textResults {
 
             if let textResult = result {
@@ -148,7 +117,7 @@ private func handleDetection(request: VNRequest, error: Error?) {
                 layer.frame = rect
                 layer.borderWidth = 2
                 layer.borderColor = UIColor.red.cgColor
-                self.view.layer.addSublayer(layer)
+                self.cameraView.layer.addSublayer(layer)
             }
         }
     }
@@ -240,9 +209,9 @@ func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBu
     }
     textObservations.removeAll()
     DispatchQueue.main.async {
-        let viewWidth = self.view.frame.size.width
-        let viewHeight = self.view.frame.size.height
-        guard let sublayers = self.view.layer.sublayers else {
+        let viewWidth = self.cameraView.frame.size.width
+        let viewHeight = self.cameraView.frame.size.height
+        guard let sublayers = self.cameraView.layer.sublayers else {
             return
         }
         for layer in sublayers[1...] {
@@ -266,7 +235,7 @@ func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBu
             textLayer.frame = rect
             textLayer.string = tuple.text
             textLayer.foregroundColor = UIColor.blue.cgColor
-            self.view.layer.addSublayer(textLayer)
+            self.cameraView.layer.addSublayer(textLayer)
         }
     }
 }

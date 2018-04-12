@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,23 +14,44 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Vision_Translator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4xs-j0-ikS" customClass="PreviewView" customModule="Vision_Translator" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JHE-Hv-ebx">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Visiosn Translator" id="QtE-Ai-k5a">
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="bTL-bI-Sbn"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="glQ-ga-14t">
+                                <rect key="frame" x="0.0" y="729" width="375" height="49"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="h2P-v2-5CK"/>
+                                    <barButtonItem title="starting language" id="rZz-Mz-tJ2"/>
+                                    <barButtonItem title="--" id="2qw-Xv-Vh3"/>
+                                    <barButtonItem title="target langauge" id="YLi-bh-ibo"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="zjU-az-oli"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="4xs-j0-ikS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0Oy-bB-6BL"/>
-                            <constraint firstItem="4xs-j0-ikS" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="3ru-Qe-A2O"/>
-                            <constraint firstItem="4xs-j0-ikS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7x5-0T-ifs"/>
-                            <constraint firstItem="4xs-j0-ikS" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="PBQ-zW-cI3"/>
-                            <constraint firstItem="4xs-j0-ikS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Wft-6P-UBb"/>
-                            <constraint firstItem="4xs-j0-ikS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uXs-on-ENy"/>
-                            <constraint firstItem="4xs-j0-ikS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yyZ-eg-dYe"/>
+                            <constraint firstItem="4xs-j0-ikS" firstAttribute="top" secondItem="JHE-Hv-ebx" secondAttribute="bottom" id="21T-K9-KHH"/>
+                            <constraint firstItem="JHE-Hv-ebx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="85h-eP-hzf"/>
+                            <constraint firstItem="glQ-ga-14t" firstAttribute="top" secondItem="4xs-j0-ikS" secondAttribute="bottom" id="8Dy-lP-WqR"/>
+                            <constraint firstItem="4xs-j0-ikS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="CHM-U2-vR2"/>
+                            <constraint firstItem="glQ-ga-14t" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="EJC-sH-kiB"/>
+                            <constraint firstItem="4xs-j0-ikS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Mea-So-aBC"/>
+                            <constraint firstItem="glQ-ga-14t" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="WaL-zZ-atg"/>
+                            <constraint firstItem="JHE-Hv-ebx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cS5-mb-rpZ"/>
+                            <constraint firstItem="glQ-ga-14t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gDu-Lq-nIh"/>
+                            <constraint firstItem="JHE-Hv-ebx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nCo-EH-kjZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -40,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="136.80000000000001" y="133.00492610837438"/>
         </scene>
     </scenes>
 </document>
