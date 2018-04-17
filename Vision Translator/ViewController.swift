@@ -20,10 +20,13 @@ class ViewController: UIViewController {
 override func viewDidLoad() {
     super.viewDidLoad()
     
-  /*  let k = Draw(frame: CGRect(
+    
+    let k = DrawRect(frame: CGRect(
         origin: CGPoint(x: 50, y: 50),
         size: CGSize(width: 100, height: 100)))
-    self.preview.addSubview(k)*/
+    self.view.addSubview(k)
+    k.backgroundColor = UIColor.clear
+    k.bringSubview(toFront: view);
     
     //tesseract OCR
     tesseract?.pageSegmentationMode = .sparseText
