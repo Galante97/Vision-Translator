@@ -9,7 +9,12 @@
 import Foundation
 
 class DrawRect: UIView {
+    var h : CGFloat!;
+    var w : CGFloat!;
+    
     override init(frame: CGRect) {
+        h = 0;
+        w = 0;
         super.init(frame: frame)
     }
     
@@ -18,8 +23,8 @@ class DrawRect: UIView {
     }
         
     override func draw(_ rect: CGRect) {
-        let h = rect.height
-        let w = rect.width
+        h = rect.height
+        w = rect.width
         let color: UIColor = UIColor.yellow
         
         let drect = CGRect(x: (w * 0.25),y: (h * 0.25),width: (w * 0.5),height: (h * 0.5))
@@ -32,5 +37,9 @@ class DrawRect: UIView {
         NSLog("drawRect has updated the view")
         
     }
+
+    
+    
+   
     
 }
